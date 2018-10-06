@@ -2,6 +2,7 @@ package guru.springframework.sfgpetclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 /**
  * Created by fernando on 22/09/18.
@@ -24,12 +25,20 @@ public class Pet extends BaseEntity {
     @Column(name = "birth_date")
     private LocalDate bithdate;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet_id")
+    private Set<Visit> visits;
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
 
     public String getName() { return name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public PetType getPetType() {
         return petType;
