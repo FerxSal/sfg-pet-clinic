@@ -15,6 +15,10 @@ public interface OwnerService {
 
     Owner save(Owner owner);
 
+    void delete(Owner owner);
+
+    void deleteById(Long id);
+
     Set<Owner> findAll();
 
 }
