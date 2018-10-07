@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.services.springdatajpa;
 import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.repositories.PetRepository;
 import guru.springframework.sfgpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Set;
 /**
  * Created by fernando on 07/10/18.
  */
+@Service
 public class PetSDJpaService implements PetService{
 
 
