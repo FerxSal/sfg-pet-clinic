@@ -14,4 +14,8 @@ public interface VetService {
     Vet save(Vet vet);
 
     Set<Vet> findAll();
+
+    void delete(Vet vet);
+
+    void deleteById(Long id);
 }
