@@ -2,7 +2,8 @@ package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.model.Speciality;
 import guru.springframework.sfgpetclinic.repositories.SpecialityRepository;
-import guru.springframework.sfgpetclinic.services.SpecialityService;
+import guru.springframework.sfgpetclinic.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -12,7 +13,8 @@ import java.util.Set;
  * Created by fernando on 07/10/18.
  */
 @Service
-public class SpecialitySDJpaService implements SpecialityService{
+@Profile("springdatajpa")
+public class SpecialitySDJpaService implements SpecialtyService {
 
 
     private final SpecialityRepository specialityRepository;

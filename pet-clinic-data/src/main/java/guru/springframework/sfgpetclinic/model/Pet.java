@@ -1,5 +1,7 @@
 package guru.springframework.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
@@ -7,6 +9,11 @@ import java.util.Set;
 /**
  * Created by fernando on 22/09/18.
  */
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="pets")
 public class Pet extends BaseEntity {
@@ -23,44 +30,10 @@ public class Pet extends BaseEntity {
     private Owner owner;
 
     @Column(name = "birth_date")
-    private LocalDate bithdate;
+    private LocalDate birthdate;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits;
 
-    public Set<Visit> getVisits() {
-        return visits;
-    }
 
-    public void setVisits(Set<Visit> visits) {
-        this.visits = visits;
-    }
-
-    public String getName() { return name; }
-
-    public void setName(String name) { this.name = name; }
-
-    public PetType getPetType() {
-        return petType;
-    }
-
-    public void setPetType(PetType petType) {
-        this.petType = petType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getBithdate() {
-        return bithdate;
-    }
-
-    public void setBithdate(LocalDate bithdate) {
-        this.bithdate = bithdate;
-    }
 }

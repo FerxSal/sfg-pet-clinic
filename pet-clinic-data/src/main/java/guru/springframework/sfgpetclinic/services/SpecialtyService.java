@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Created by fernando on 07/10/18.
  */
-public interface SpecialityService {
+public interface SpecialtyService {
 
     Speciality findById(Long id);
 
